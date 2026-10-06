@@ -8,7 +8,8 @@ await loginPage.goto();
 await loginPage.login("standard_user","secret_sauce");
 await productPage.addToCart(1);
 await expect(productPage.shoppingCartBadge).toBeVisible();
-
-
+const name = await productPage.getProductName(1);
+const price = await productPage.getProductPrice(1);
+console.log(`Selected Product: ${name} - Price: ${price}`);
 });
 
