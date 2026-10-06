@@ -4,12 +4,14 @@ export class LoginPage{
     readonly userName: Locator;
     readonly password: Locator;
     readonly loginBtn: Locator;
+    readonly errorMessage: Locator;
 
     constructor(page: Page){
         this.page = page;
         this.userName = page.locator('#user-name');
         this.password = page.locator('[id="password"]');
         this.loginBtn = page.getByRole('button', { name: 'Login' });
+        this.errorMessage = page.locator('[data-test="error"]');
 
     }
 
