@@ -6,6 +6,7 @@ export class ProductsPage {
     readonly productPrice: Locator;
     readonly addToCartBtns: Locator;
     readonly shoppingCartBadge: Locator;
+    readonly shoppingCartIcon: Locator;
     constructor(page: Page) {
         this.page = page;
         this.productNameLink = page.locator('[id="item_0_title_link"]');
@@ -13,6 +14,7 @@ export class ProductsPage {
         this.productPrice = page.locator('[class="inventory_item_price"]');
         this.addToCartBtns = page.locator('button[id^="add-to-cart"]');
         this.shoppingCartBadge = page.locator('[class="shopping_cart_badge"]');
+        this.shoppingCartIcon = page.locator('.shopping_cart_link');
     }
 
     async addToCart(productIndex: number) {
@@ -26,6 +28,9 @@ export class ProductsPage {
     async getProductPrice(productIndex: number) {
         const productPrice = await this.productPrice.nth(productIndex).textContent();
         return productPrice;
+    }
+    async goToCart(){
+        await this.shoppingCartIcon.click();
     }
 
 }
