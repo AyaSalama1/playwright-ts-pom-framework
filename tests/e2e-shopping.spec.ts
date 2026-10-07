@@ -5,6 +5,7 @@ import { CartPage } from '../pages/CartPage';
 import { CheckoutYourInformationPage } from '../pages/CheckoutYourInformationPage';
 import { CheckoutOverviewPage } from '../pages/CheckoutOverviewPage';
 import { CheckoutCompletePage } from '../pages/CheckoutCompletePage';
+import testData from '../testData.json';
 
 test('E2E shopping test', async ({ page }) => {
     const loginPage = new LoginPage(page);
@@ -16,8 +17,7 @@ test('E2E shopping test', async ({ page }) => {
     const checkoutCompletePage = new CheckoutCompletePage(page);
 
     await loginPage.goto();
-    await loginPage.login("standard_user", "secret_sauce");
-
+    await loginPage.login(testData.validUser.username, testData.validUser.password);
     await productPage.addToCart(productIndex);
     await expect(productPage.shoppingCartBadge).toBeVisible();
     const selectedProductName = await productPage.getProductName(productIndex);
