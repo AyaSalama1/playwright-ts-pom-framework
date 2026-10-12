@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-import { ProductsPage } from '../pages/ProductsPage';
-import { CartPage } from '../pages/CartPage';
-import { CheckoutYourInformationPage } from '../pages/CheckoutYourInformationPage';
-import { CheckoutOverviewPage } from '../pages/CheckoutOverviewPage';
-import { CheckoutCompletePage } from '../pages/CheckoutCompletePage';
-import testData from '../testData.json';
+import { LoginPage } from '../../pages/LoginPage';
+import { ProductsPage } from '../../pages/ProductsPage';
+import { CartPage } from '../../pages/CartPage';
+import { CheckoutYourInformationPage } from '../../pages/CheckoutYourInformationPage';
+import { CheckoutOverviewPage } from '../../pages/CheckoutOverviewPage';
+import { CheckoutCompletePage } from '../../pages/CheckoutCompletePage';
+import testData from '../../data/testData.json';
 test.describe('Test cases', () => {
     let loginPage: LoginPage;
     test.beforeEach(async ({ page }) => {

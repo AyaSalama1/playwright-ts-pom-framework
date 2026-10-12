@@ -1,0 +1,26 @@
+{
+    "validUser": {
+        "username": "standard_user",
+        "password": "secret_sauce"
+    },
+    "lockedUser": {
+        "username": "locked_out_user",
+        "password": "secret_sauce"
+    },
+    "invalidUser": {
+        "username": "standard_user",
+        "password": "invalid_pw"
+    },
+    "defaultUser": {
+        "name": "Aya Salama",
+        "job": "Senior QA Automation Engineer"
+    },
+    "updatedUser": {
+        "name": "Aya Salama Mostafa",
+        "job": "QA Automation Lead"
+    },
+    "loginCredentials": {
+        "email": "eve.holt@reqres.in",
+        "password": "cityslicers"
+    }
+}

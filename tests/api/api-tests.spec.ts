@@ -1,5 +1,5 @@
 import { test, expect, request } from '@playwright/test';
-import { UsersService } from '../services/UsersService';
+import { UsersService } from '../../services/UsersService';
 
 test.describe('API Testing - Users Feature', () => {
 
@@ -92,7 +92,8 @@ test.describe('API Testing - Users Feature with service pattern', () => {
         usersService = new UsersService(request);
     });
     test('Get - Should fetch user details successfully', async () => {
-        const response = await usersService.getUser(3); expect(response.status()).toBe(200);
+        const response = await usersService.getUser(3); 
+        expect(response.status()).toBe(200);
         const responseBody = await response.json();
         expect(responseBody.data).toHaveProperty('id', 3);
         expect(responseBody.data).toHaveProperty('first_name', 'Emma');

@@ -14,7 +14,14 @@ export class UsersService {
     async createUser(userData: { name: string; job: string }) {
         return await this.request.post('https://reqres.in/api/users', { data: userData });
     }
-
+    async getUserWithAuth(userId: number, token: string) {
+        return await this.request.get(`https://reqres.in/api/users/${userId}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        });
+    }
     async updateUser(userId: number, userData: { name: string; job: string }) {
         return await this.request.put(`https://reqres.in/api/users/${userId}`, { data: userData });
     }
